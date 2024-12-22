@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليل الشركات | Company Directory</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            direction: rtl;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+        header button {
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #ffffff;
+            border: 1px solid #007bff;
+            border-radius: 5px;
+            color: #007bff;
+            cursor: pointer;
+        }
+        header button:hover {
+            background-color: #007bff;
+            color: #ffffff;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .company {
+            margin-bottom: 20px;
+        }
+        .company h3 {
+            margin: 0;
+            color: #007bff;
+        }
+        .company p {
+            margin: 5px 0;
+            color: #333;
+        }
+        .company a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .company a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>دليل الشركات | Company Directory</h1>
+        <button onclick="switchLanguage('ar')">العربية</button>
+        <button onclick="switchLanguage('en')">English</button>
+    </header>
+    <div class="container">
+        <div class="company" data-lang="ar">
+            <h3>شركة مثال 1</h3>
+            <p>وصف مختصر عن الشركة وما تقدمه.</p>
+            <a href="https://example.com" target="_blank">زيارة الموقع</a>
+        </div>
+        <div class="company" data-lang="en" style="display: none;">
+            <h3>Example Company 1</h3>
+            <p>A brief description of the company and its offerings.</p>
+            <a href="https://example.com" target="_blank">Visit Website</a>
+        </div>
+        <div class="company" data-lang="ar">
+            <h3>شركة GetResponse</h3>
+            <p>منصة تسويقية متكاملة تقدم أدوات لإنشاء حملات البريد الإلكتروني وإدارة التسويق الرقمي.</p>
+            <a href="https://www.getresponse.com?ab=JdGf3evWYW" target="_blank">زيارة الموقع</a>
+        </div>
+        <div class="company" data-lang="en" style="display: none;">
+            <h3>GetResponse</h3>
+            <p>An all-in-one marketing platform offering tools for email campaigns and digital marketing management.</p>
+            <a href="https://www.getresponse.com?ab=JdGf3evWYW" target="_blank">Visit Website</a>
+        </div>
+    </div>
+    <script>
+        function switchLanguage(lang) {
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                el.style.display = el.getAttribute('data-lang') === lang ? 'block' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>
